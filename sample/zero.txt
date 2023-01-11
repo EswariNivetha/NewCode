@@ -1,0 +1,695 @@
+a
+
+
+
+deccfeevhgjhjsss;;lk'';;;
+llllSELECT
+    "767"."FIRST_NAME",
+    "767"."LAST_NAME",
+    "670"."VALUE",
+    "670"."ID",
+    "671"."NUMBER",
+    "671"."ID",
+    "767"."ID"   
+FROM
+    "mcocontact" AS "767"   
+INNER JOIN
+    "mcocontactemail" AS "769"                   
+        ON "767"."ID" = "769"."CONqefeTACT_ID"   
+INNER JOIN
+    "ometemail" AS "670"                   
+        ON "769"."EMAIL_ID" = "670"."ID"   
+INNER JOIN
+    "mcocontactphone" AS "770"                   
+        ON "767"."ID" = "770"."CONTACT_ID"   
+INNER JOIN
+    "ometphone" AS "671"                   
+        ON "770"."PHONE_ID" = "671"."ID" 
+WHERE
+    (
+        (
+            (
+                (
+                    "769"."ORG_ID" = 1
+                ) 
+                OR (
+                    "769"."ORG_ID" IS NULL
+                ) 
+            )  
+            AND  (
+                (
+                    "767"."ORG_ID" = 1
+                ) 
+                AND  (
+                    (
+                        "670"."ORG_ID" = 1
+                    ) 
+                    OR (
+                        "670"."ORG_ID" IS NULL
+                    ) 
+                )  
+            )  
+        )  
+        AND (
+            "670"."VALUE" IN (
+                SELECT
+                    "670"."VALUE" 
+                FROM
+                    "mcocontact" AS "767" 
+                INNER JOIN
+                    "mcocontactemail" AS "769" 
+                        ON "767"."ID" = "769"."CONTACT_ID" 
+                INNER JOIN
+                    "ometemail" AS "670" 
+                        ON "769"."EMAIL_ID" = "670"."ID" 
+                WHERE
+                    (
+                        "767"."ID" = 156
+                    )
+            )
+        ) OR ("671"."NUMBER" IN (
+                SELECT
+                    "671"."NUMBER" 
+                FROM
+                    "mcocontact" AS "767" 
+                INNER JOIN
+                    "mcocontactphone" AS "770" 
+                        ON "767"."ID" = "770"."CONTACT_ID" 
+                INNER JOIN
+                    "ometphone" AS "671" 
+                        ON "770"."PHONE_ID" = "671"."ID" 
+                WHERE
+                    (
+                        "767"."ID" = 801
+                    )
+			)
+		)
+    ) 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ================================================
+    
+    
+    
+    
+    
+    
+    
+    
+    Query Correct:
+    
+    
+    SELECT
+    "248"."COMPANY_ID",
+    "248"."CONTACT_ID",
+    "249"."CONTACT_ID",
+    "249"."EMAIL_ID",
+    "250"."CONTACT_ID",
+    "250"."PHONE_ID",
+    "150"."ORG_ID",
+    "150"."ID",
+    "150"."TYPE",
+    "150"."VALUE",
+    "151"."TYPE",
+    "151"."ID",
+    "151"."ORG_ID",
+    "151"."COUNTRY_ID",
+    "151"."NUMBER",
+    "247"."LIFE_CYCLE_STAGE_ID",
+    "247"."ID",
+    "247"."SOURCE_ID",
+    "247"."CREATED_TIME",
+    "247"."OWNER_ID",
+    "247"."LAST_NAME",
+    "247"."FIRST_NAME",
+    "247"."ORG_ID",
+    "247"."MODIFIED_TIME",
+    "248"."ID",
+    "249"."ID",
+    "250"."ID" 
+FROM
+    "mcocontact" AS "247" 
+LEFT JOIN
+    "mcocontactcompany" AS "248" 
+        ON "247"."ID" = "248"."CONTACT_ID" 
+LEFT JOIN
+    "mcocontactemail" AS "249" 
+        ON "247"."ID" = "249"."CONTACT_ID" 
+LEFT JOIN
+    "mcocontactphone" AS "250" 
+        ON "247"."ID" = "250"."CONTACT_ID" 
+LEFT JOIN
+    "ometemail" AS "150" 
+        ON "249"."EMAIL_ID" = "150"."ID" 
+LEFT JOIN
+    "ometphone" AS "151" 
+        ON "250"."PHONE_ID" = "151"."ID" 
+WHERE
+    (
+        (
+            (
+                (
+                    "250"."ORG_ID" = 1
+                ) 
+                OR (
+                    "250"."ORG_ID" IS NULL
+                ) 
+            )  
+            AND  (
+                (
+                    (
+                        "249"."ORG_ID" = 1
+                    ) 
+                    OR (
+                        "249"."ORG_ID" IS NULL
+                    ) 
+                )  
+                AND  (
+                    (
+                        (
+                            "248"."ORG_ID" = 1
+                        ) 
+                        OR (
+                            "248"."ORG_ID" IS NULL
+                        ) 
+                    )  
+                    AND  (
+                        (
+                            "247"."ORG_ID" = 1
+                        ) 
+                        AND  (
+                            (
+                                (
+                                    "151"."ORG_ID" = 1
+                                ) 
+                                OR (
+                                    "151"."ORG_ID" IS NULL
+                                ) 
+                            )  
+                            AND  (
+                                (
+                                    "150"."ORG_ID" = 1
+                                ) 
+                                OR (
+                                    "150"."ORG_ID" IS NULL
+                                ) 
+                            )  
+                        )  
+                    )  
+                )  
+            )  
+        )  
+        AND  (
+            (
+                "247"."ID" != 801
+            ) 
+            AND  (
+                (
+                    "151"."NUMBER" IN  (
+                        '6767677676' 
+                    ) 
+                ) 
+                OR (
+                    "150"."VALUE" IN  (
+                        'kavi@gmail.com' 
+                    ) 
+                ) 
+            )  
+        )  
+    ) 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    =======================================================
+    
+    correct
+    
+    SELECT
+    "1548"."COMPANY_ID",
+    "1548"."CONTACT_ID",
+    "1549"."CONTACT_ID",
+    "1549"."EMAIL_ID",
+    "1550"."CONTACT_ID",
+    "1550"."PHONE_ID",
+    "1450"."ORG_ID",
+    "1450"."ID",
+    "1450"."TYPE",
+    "1450"."VALUE",
+    "1451"."TYPE",
+    "1451"."ID",
+    "1451"."ORG_ID",
+    "1451"."COUNTRY_ID",
+    "1451"."NUMBER",
+    "1547"."LIFE_CYCLE_STAGE_ID",
+    "1547"."ID",
+    "1547"."SOURCE_ID",
+    "1547"."CREATED_TIME",
+    "1547"."OWNER_ID",
+    "1547"."LAST_NAME",
+    "1547"."FIRST_NAME",
+    "1547"."ORG_ID",
+    "1547"."MODIFIED_TIME",
+    "1548"."ID",
+    "1549"."ID",
+    "1550"."ID" 
+FROM
+    "mcocontact" AS "1547" 
+LEFT JOIN
+    "mcocontactcompany" AS "1548" 
+        ON "1547"."ID" = "1548"."CONTACT_ID" 
+LEFT JOIN
+    "mcocontactemail" AS "1549" 
+        ON "1547"."ID" = "1549"."CONTACT_ID" 
+LEFT JOIN
+    "mcocontactphone" AS "1550" 
+        ON "1547"."ID" = "1550"."CONTACT_ID" 
+LEFT JOIN
+    "ometemail" AS "1450" 
+        ON "1549"."EMAIL_ID" = "1450"."ID" 
+LEFT JOIN
+    "ometphone" AS "1451" 
+        ON "1550"."PHONE_ID" = "1451"."ID" 
+WHERE
+    (
+        (
+            (
+                (
+                    "1550"."ORG_ID" = 1
+                ) 
+                OR (
+                    "1550"."ORG_ID" IS NULL
+                ) 
+            )  
+            AND  (
+                (
+                    (
+                        "1549"."ORG_ID" = 1
+                    ) 
+                    OR (
+                        "1549"."ORG_ID" IS NULL
+                    ) 
+                )  
+                AND  (
+                    (
+                        (
+                            "1548"."ORG_ID" = 1
+                        ) 
+                        OR (
+                            "1548"."ORG_ID" IS NULL
+                        ) 
+                    )  
+                    AND  (
+                        (
+                            "1547"."ORG_ID" = 1
+                        ) 
+                        AND  (
+                            (
+                                (
+                                    "1451"."ORG_ID" = 1
+                                ) 
+                                OR (
+                                    "1451"."ORG_ID" IS NULL
+                                ) 
+                            )  
+                            AND  (
+                                (
+                                    "1450"."ORG_ID" = 1
+                                ) 
+                                OR (
+                                    "1450"."ORG_ID" IS NULL
+                                ) 
+                            )  
+                        )  
+                    )  
+                )  
+            )  
+        )  
+        AND  (
+            (
+                "1547"."ID" != 2601
+            ) 
+            AND  (
+                (
+                    "1451"."NUMBER" IN  (
+                        '222','555' 
+                    ) 
+                ) 
+                OR (
+                    "1450"."VALUE" IN  (
+                        'kavi@gmail.com','nila@gmail.com' 
+                    ) 
+                ) 
+            )  
+        )  
+    ) 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ---------------------------------------------------------
+    doubt:
+    SELECT
+    "3627"."FIRST_NAME",
+    "3627"."LAST_NAME",
+    "3530"."VALUE",
+    "3531"."NUMBER",
+    "3629"."ORG_ID",
+    "3629"."ID",
+    "3629"."CONTACT_ID",
+    "3629"."EMAIL_ID",
+    "3630"."ORG_ID",
+    "3630"."PHONE_ID",
+    "3630"."ID",
+    "3630"."CONTACT_ID",
+    "3530"."ID",
+    "3531"."ID",
+    "3627"."ID" 
+FROM
+    "mcocontact" AS "3627" 
+LEFT JOIN
+    "mcocontactemail" AS "3629" 
+        ON "3627"."ID" = "3629"."CONTACT_ID" 
+LEFT JOIN
+    "mcocontactphone" AS "3630" 
+        ON "3627"."ID" = "3630"."CONTACT_ID" 
+INNER JOIN
+    "ometemail" AS "3530" 
+        ON "3629"."EMAIL_ID" = "3530"."ID" 
+INNER JOIN
+    "ometphone" AS "3531" 
+        ON "3630"."PHONE_ID" = "3531"."ID" 
+WHERE
+    (
+        (
+            (
+                (
+                    "3630"."ORG_ID" = 1
+                ) 
+                OR (
+                    "3630"."ORG_ID" IS NULL
+                ) 
+            )  
+            AND  (
+                (
+                    (
+                        "3629"."ORG_ID" = 1
+                    ) 
+                    OR (
+                        "3629"."ORG_ID" IS NULL
+                    ) 
+                )  
+                AND  (
+                    (
+                        "3627"."ORG_ID" = 1
+                    ) 
+                    AND  (
+                        (
+                            (
+                                "3531"."ORG_ID" = 1
+                            ) 
+                            OR (
+                                "3531"."ORG_ID" IS NULL
+                            ) 
+                        )  
+                        AND  (
+                            (
+                                "3530"."ORG_ID" = 1
+                            ) 
+                            OR (
+                                "3530"."ORG_ID" IS NULL
+                            ) 
+                        )  
+                    )  
+                )  
+            )  
+        )  
+        AND  (
+            (
+                "3530"."VALUE" IN (
+                    SELECT
+                        "3530"."VALUE" 
+                    FROM
+                        "mcocontact" AS "3627" 
+                    LEFT JOIN
+                        "mcocontactemail" AS "3629" 
+                            ON "3627"."ID" = "3629"."CONTACT_ID" 
+                    LEFT JOIN
+                        "ometemail" AS "3530" 
+                            ON "3629"."EMAIL_ID" = "3530"."ID" 
+                    WHERE
+                        (
+                            "3627"."ID" = 2601
+                        )
+                )
+            ) 
+            AND (
+                "3531"."NUMBER" IN (
+                    SELECT
+                        "3531"."NUMBER" 
+                    FROM
+                        "mcocontact" AS "3627" 
+                    LEFT JOIN
+                        "mcocontactphone" AS "3630" 
+                            ON "3627"."ID" = "3630"."CONTACT_ID" 
+                    LEFT JOIN
+                        "ometphone" AS "3531" 
+                            ON "3630"."PHONE_ID" = "3531"."ID" 
+                    WHERE
+                        (
+                            "3627"."ID" = 2601
+                        )
+                )
+            ) 
+        )  
+    ) 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    SELECT
+    "1548"."COMPANY_ID",
+    "1548"."CONTACT_ID",
+    "1549"."CONTACT_ID",
+    "1549"."EMAIL_ID",
+    "1550"."CONTACT_ID",
+    "1550"."PHONE_ID",
+    "1450"."ORG_ID",
+    "1450"."ID",
+    "1450"."TYPE",
+    "1450"."VALUE",
+    "1451"."TYPE",
+    "1451"."ID",
+    "1451"."ORG_ID",
+    "1451"."COUNTRY_ID",
+    "1451"."NUMBER",
+    "1547"."LIFE_CYCLE_STAGE_ID",
+    "1547"."ID",
+    "1547"."SOURCE_ID",
+    "1547"."CREATED_TIME",
+    "1547"."OWNER_ID",
+    "1547"."LAST_NAME",
+    "1547"."FIRST_NAME",
+    "1547"."ORG_ID",
+    "1547"."MODIFIED_TIME",
+    "1548"."ID",
+    "1549"."ID",
+    "1550"."ID" 
+FROM
+    "mcocontact" AS "1547" 
+LEFT JOIN
+    "mcocontactcompany" AS "1548" 
+        ON "1547"."ID" = "1548"."CONTACT_ID" 
+LEFT JOIN
+    "mcocontactemail" AS "1549" 
+        ON "1547"."ID" = "1549"."CONTACT_ID" 
+LEFT JOIN
+    "mcocontactphone" AS "1550" 
+        ON "1547"."ID" = "1550"."CONTACT_ID" 
+LEFT JOIN
+    "ometemail" AS "1450" 
+        ON "1549"."EMAIL_ID" = "1450"."ID" 
+LEFT JOIN
+    "ometphone" AS "1451" 
+        ON "1550"."PHONE_ID" = "1451"."ID" 
+WHERE
+    (
+        (
+            (
+                (
+                    "1550"."ORG_ID" = 1
+                ) 
+                OR (
+                    "1550"."ORG_ID" IS NULL
+                ) 
+            )  
+            AND  (
+                (
+                    (
+                        "1549"."ORG_ID" = 1
+                    ) 
+                    OR (
+                        "1549"."ORG_ID" IS NULL
+                    ) 
+                )  
+                AND  (
+                    (
+                        (
+                            "1548"."ORG_ID" = 1
+                        ) 
+                        OR (
+                            "1548"."ORG_ID" IS NULL
+                        ) 
+                    )  
+                    AND  (
+                        (
+                            "1547"."ORG_ID" = 1
+                        ) 
+                        AND  (
+                            (
+                                (
+                                    "1451"."ORG_ID" = 1
+                                ) 
+                                OR (
+                                    "1451"."ORG_ID" IS NULL
+                                ) 
+                            )  
+                            AND  (
+                                (
+                                    "1450"."ORG_ID" = 1
+                                ) 
+                                OR (
+                                    "1450"."ORG_ID" IS NULL
+                                ) 
+                            )  
+                        )  
+                    )  
+                )  
+            )  
+        )  
+        AND  (
+            (
+                "1547"."ID" != 2601
+            ) 
+            AND  (
+                (
+                    "1451"."NUMBER" IN  (
+                        SELECT DISTINCT
+                        "3530"."VALUE" 
+                    FROM
+                        "mcocontact" AS "3627" 
+                    LEFT JOIN
+                        "mcocontactemail" AS "3629" 
+                            ON "3627"."ID" = "3629"."CONTACT_ID" 
+                    LEFT JOIN
+                        "ometemail" AS "3530" 
+                            ON "3629"."EMAIL_ID" = "3530"."ID" 
+                    WHERE
+                        (
+                            "3627"."ID" = 2601
+                        )
+                    ) 
+                ) 
+                OR (
+                    "1450"."VALUE" IN  (
+                      SELECT DISTINCT
+                        "3530"."VALUE" 
+                    FROM
+                        "mcocontact" AS "3627" 
+                    LEFT JOIN
+                        "mcocontactemail" AS "3629" 
+                            ON "3627"."ID" = "3629"."CONTACT_ID" 
+                    LEFT JOIN
+                        "ometemail" AS "3530" 
+                            ON "3629"."EMAIL_ID" = "3530"."ID" 
+                    WHERE
+                        (
+                            "3627"."ID" = 2601
+                        )
+                    ) 
+                ) 
+            )  
+        )  
+    ) 
